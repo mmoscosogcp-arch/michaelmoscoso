@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Moscoso | Data Analyst → Data Engineer</title>
+  <meta name="description" content="Portafolio de Michael Moscoso — Analista de Datos construyendo camino hacia Data Engineering. Proyectos con Python, SQL, ETL, GCP y más." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">MM<span class="accent">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#contact" class="btn-nav">Contacto</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-tag"><span class="tag-dot"></span> Aprendiendo · Construyendo · Creciendo</p>
+        <h1 class="hero-title">
+          Michael Moscoso
+          <span class="hero-subtitle">Data Analyst → Data Engineer</span>
+        </h1>
+        <p class="hero-desc">
+          Analista de datos con experiencia en análisis, SQL y Python, construyendo activamente mis habilidades en ingeniería de datos.
+          Este portafolio documenta mi aprendizaje real — proyecto a proyecto.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+          <a href="https://www.linkedin.com/in/michaelmoscosoramirez/" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="hero-stack">
+          <span>Python</span>
+          <span>SQL</span>
+          <span>ETL Pipelines</span>
+          <span>GCP</span>
+          <span>DuckDB</span>
+          <span>Pandas</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="code-card">
+          <div class="code-card-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="code-filename">pipeline.py</span>
+          </div>
+          <pre class="code-body"><code><span class="kw">import</span> yfinance <span class="kw">as</span> yf
+<span class="kw">import</span> duckdb
+
+<span class="kw">def</span> <span class="fn">extract</span>(ticker, period):
+    <span class="kw">return</span> yf.<span class="fn">Ticker</span>(ticker).<span class="fn">history</span>(period)
+
+<span class="kw">def</span> <span class="fn">transform</span>(df):
+    df[<span class="str">"returns"</span>] = df[<span class="str">"Close"</span>].<span class="fn">pct_change</span>()
+    df[<span class="str">"ma_7"</span>]    = df[<span class="str">"Close"</span>].<span class="fn">rolling</span>(<span class="str">7</span>).<span class="fn">mean</span>()
+    <span class="kw">return</span> df.<span class="fn">dropna</span>()
+
+<span class="kw">def</span> <span class="fn">load</span>(df, conn):
+    conn.<span class="fn">execute</span>(<span class="str">"CREATE TABLE stocks AS SELECT * FROM df"</span>)</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <a href="#about">
+        <span>Scroll</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2 class="section-title">Sobre mí</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Soy <strong>analista de datos</strong> con experiencia en SQL, Python y visualización,
+            actualmente en transición hacia la <strong>ingeniería de datos</strong> — aprendiendo construyendo proyectos reales.
+          </p>
+          <p>
+            He explorado herramientas como <strong>Google Cloud Platform</strong> y arquitecturas de datos durante cursos y proyectos personales.
+            Hoy aplico ese conocimiento construyendo pipelines ETL desde cero, paso a paso.
+          </p>
+          <p>
+            Mi ventaja es que entiendo los datos desde el lado del negocio. Ahora estoy aprendiendo a moverlos,
+            transformarlos y almacenarlos de forma robusta — y este portafolio documenta ese proceso.
+          </p>
+          <div class="about-badges">
+            <div class="badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Pipelines ETL
+            </div>
+            <div class="badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Cloud (GCP)
+            </div>
+            <div class="badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Data Analysis
+            </div>
+            <div class="badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Orquestación
+            </div>
+          </div>
+        </div>
+        <div class="about-journey">
+          <h3>Mi camino</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot active"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Hoy</span>
+                <h4>Aprendiendo Data Engineering</h4>
+                <p>ETL pipelines · APIs · DuckDB · GCP</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2023 – 2025</span>
+                <h4>Data Analyst + Python</h4>
+                <p>SQL · Pandas · Visualización · Machine Learning</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Inicio</span>
+                <h4>Análisis de Datos</h4>
+                <p>Excel · SQL · Reporting · Tableau</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <h2 class="section-title">Stack técnico</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3><span class="cat-icon">⚙️</span> Ingeniería de Datos (aprendiendo)</h3>
+          <div class="skill-tags">
+            <span class="tag">ETL Pipelines</span>
+            <span class="tag">APIs REST</span>
+            <span class="tag">DuckDB</span>
+            <span class="tag">Data Quality</span>
+            <span class="tag">Automatización</span>
+            <span class="tag">Arquitectura Medallion</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><span class="cat-icon">☁️</span> Cloud & Herramientas</h3>
+          <div class="skill-tags">
+            <span class="tag">Google Cloud Platform</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Cloud Storage</span>
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">Docker (básico)</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><span class="cat-icon">🐍</span> Lenguajes & Bases de datos</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">yfinance</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3><span class="cat-icon">📊</span> Análisis & Visualización</h3>
+          <div class="skill-tags">
+            <span class="tag">Tableau</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Plotly</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">EDA</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-desc">Proyectos prácticos de ingeniería y análisis de datos — del prototipo al sistema productivo.</p>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 — ACTIVO -->
+        <article class="project-card featured">
+          <div class="project-header">
+            <div class="project-icon">📈</div>
+            <div class="project-links">
+              <a href="https://github.com/mmoscosogcp-arch/market-pipeline" target="_blank" rel="noopener" class="icon-link" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Pipeline de Mercados Financieros</h3>
+          <p>Pipeline ETL que extrae precios de acciones e índices bursátiles desde Yahoo Finance, calcula métricas (retornos diarios, promedios móviles, volatilidad) y los almacena en DuckDB como warehouse local. Genera reporte HTML automático.</p>
+          <div class="project-stack">
+            <span>Python</span><span>yfinance</span><span>DuckDB</span><span>Pandas</span><span>ETL</span>
+          </div>
+          <div class="project-footer">
+            <span class="status status-wip">En construcción</span>
+          </div>
+        </article>
+
+        <!-- Project 2 — Exploratorio -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🌤️</div>
+            <div class="project-links">
+              <a href="https://github.com/mmoscosogcp-arch" target="_blank" rel="noopener" class="icon-link" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Weather API — Primer Pipeline</h3>
+          <p>Primer ejercicio de ingesta de datos desde una API pública. Extrae datos climáticos, aplica limpieza básica y los guarda en archivos estructurados. Proyecto de aprendizaje.</p>
+          <div class="project-stack">
+            <span>Python</span><span>API REST</span><span>Pandas</span><span>CSV</span>
+          </div>
+          <div class="project-footer">
+            <span class="status status-learning">Aprendizaje</span>
+          </div>
+        </article>
+
+        <!-- Project 3 — Exploratorio -->
+        <article class="project-card">
+          <div class="project-header">
+            <div class="project-icon">🏛️</div>
+            <div class="project-links">
+              <a href="https://github.com/mmoscosogcp-arch" target="_blank" rel="noopener" class="icon-link" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>GCP Medallion — Exploración</h3>
+          <p>Exploración de arquitectura medallion (Bronze → Silver → Gold) en Google Cloud Platform siguiendo un curso práctico. Primer contacto con BigQuery y Cloud Storage.</p>
+          <div class="project-stack">
+            <span>Python</span><span>GCP</span><span>BigQuery</span><span>Cloud Storage</span>
+          </div>
+          <div class="project-footer">
+            <span class="status status-learning">Aprendizaje</span>
+          </div>
+        </article>
+
+        <!-- Project 4 — Próximo -->
+        <article class="project-card coming-soon">
+          <div class="project-header">
+            <div class="project-icon">🔄</div>
+          </div>
+          <h3>Pipeline con Orquestación</h3>
+          <p>El mismo pipeline financiero pero orquestado — automatización de ejecución diaria con scheduling. Siguiente paso natural después del proyecto actual.</p>
+          <div class="project-stack">
+            <span>Python</span><span>Schedule / Cron</span><span>DuckDB</span>
+          </div>
+          <div class="project-footer">
+            <span class="status status-wip">Próximo</span>
+          </div>
+        </article>
+
+        <!-- Project 5 — Próximo -->
+        <article class="project-card coming-soon">
+          <div class="project-header">
+            <div class="project-icon">🧱</div>
+          </div>
+          <h3>Transformaciones con dbt</h3>
+          <p>Aplicar dbt sobre los datos del warehouse para crear modelos, tests de calidad y documentación automática del linaje de datos.</p>
+          <div class="project-stack">
+            <span>dbt</span><span>DuckDB</span><span>SQL</span>
+          </div>
+          <div class="project-footer">
+            <span class="status status-wip">Futuro</span>
+          </div>
+        </article>
+
+        <!-- Project 6 — Próximo -->
+        <article class="project-card coming-soon">
+          <div class="project-header">
+            <div class="project-icon">📡</div>
+          </div>
+          <h3>Streaming en Tiempo Real</h3>
+          <p>Procesamiento de datos en tiempo real. Meta a mediano plazo una vez dominados los fundamentos de pipelines batch.</p>
+          <div class="project-stack">
+            <span>Kafka</span><span>Python</span><span>Docker</span>
+          </div>
+          <div class="project-footer">
+            <span class="status status-wip">Futuro</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROADMAP ===== -->
+  <section class="roadmap section" id="roadmap">
+    <div class="container">
+      <h2 class="section-title">Próximos proyectos</h2>
+      <p class="section-desc">Los proyectos que estoy construyendo para completar el stack de un Data Engineer moderno.</p>
+      <div class="roadmap-grid">
+        <div class="roadmap-card">
+          <span class="rm-num">01</span>
+          <h4>Streaming con Kafka</h4>
+          <p>Procesar eventos en tiempo real, ideal para logs, transacciones o redes sociales.</p>
+          <div class="rm-tags"><span>Kafka</span><span>Spark Streaming</span><span>Python</span></div>
+        </div>
+        <div class="roadmap-card">
+          <span class="rm-num">02</span>
+          <h4>Data Warehouse con dbt</h4>
+          <p>Transformaciones ELT documentadas, con linaje de datos y tests de calidad automatizados.</p>
+          <div class="rm-tags"><span>dbt</span><span>BigQuery</span><span>SQL</span></div>
+        </div>
+        <div class="roadmap-card">
+          <span class="rm-num">03</span>
+          <h4>Data Lakehouse en GCP</h4>
+          <p>Arquitectura lakehouse con Delta Lake o Iceberg sobre Cloud Storage + BigQuery.</p>
+          <div class="rm-tags"><span>GCP</span><span>Delta Lake</span><span>Spark</span></div>
+        </div>
+        <div class="roadmap-card">
+          <span class="rm-num">04</span>
+          <h4>Observabilidad de Datos</h4>
+          <p>Sistema de monitoreo de pipelines con alertas, métricas y dashboards de data quality.</p>
+          <div class="rm-tags"><span>Great Expectations</span><span>Airflow</span><span>Python</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>¿Trabajamos juntos?</h2>
+        <p>Estoy abierto a oportunidades en ingeniería de datos, proyectos freelance o colaboraciones. Conecta conmigo en LinkedIn.</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/michaelmoscosoramirez/" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/mmoscosogcp-arch" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Michael Moscoso &copy; 2026 · Construido con HTML, CSS & JS · Hosted en GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
