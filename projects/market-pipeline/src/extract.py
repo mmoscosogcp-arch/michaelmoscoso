@@ -6,7 +6,6 @@ from src.config import TICKERS, PERIOD, DB_PATH
 def extract_ticker(symbol, period):
     print(f"Descargando {symbol}...")
     try:
-
         ticker = yf.Ticker(symbol)
         df = ticker.history(period=period)
         # agregamos columna para saber a qué acción pertenece cada fila
