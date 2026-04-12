@@ -524,6 +524,67 @@ img { display: block; max-width: 100%; }
 }
 
 /* ================================================
+   KITTY SECTION
+   ================================================ */
+.kitty-section {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kitty-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  filter: grayscale(100%) brightness(.7);
+  transition: transform 8s ease;
+}
+
+.kitty-section:hover .kitty-bg {
+  transform: scale(1.03);
+}
+
+.kitty-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, var(--bg) 0%, transparent 20%, transparent 60%, var(--bg) 100%),
+    linear-gradient(to right,  var(--bg) 0%, transparent 20%, transparent 80%, var(--bg) 100%);
+}
+
+.kitty-quote {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 24px;
+  margin-top: 180px;
+}
+
+.kitty-quote p {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: .02em;
+  line-height: 1.5;
+  font-style: italic;
+  text-shadow: 0 2px 20px rgba(0,0,0,.8);
+  margin-bottom: 16px;
+}
+
+.kitty-quote span {
+  font-size: .8rem;
+  color: rgba(255,255,255,.5);
+  font-family: var(--font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* ================================================
    SKILLS
    ================================================ */
 .skills { background: var(--bg-2); }
@@ -1200,11 +1261,52 @@ img { display: block; max-width: 100%; }
   background: var(--bg-2);
   border-top: 1px solid var(--border);
   padding: 24px 0;
-  text-align: center;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 .footer p {
   font-size: .82rem;
   color: var(--text-muted);
+}
+.footer-kitty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.kitty-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--border);
+  opacity: .85;
+  transition: all var(--transition);
+}
+.kitty-img:hover {
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(242,106,33,.25);
+}
+.kitty-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.kitty-name {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.kitty-label {
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 /* ================================================
