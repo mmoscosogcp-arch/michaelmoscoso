@@ -2,9 +2,9 @@
    VARIABLES & RESET
    ================================================ */
 :root {
-  --bg:         #0D1117;
-  --bg-2:       #161B22;
-  --bg-3:       #1C2128;
+  --bg:         #080D14;
+  --bg-2:       #0B1119;
+  --bg-3:       #101720;
   --border:     #30363D;
   --text:       #E6EDF3;
   --text-muted: #8B949E;
@@ -34,7 +34,12 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 55% 50% at 92% 8%,  rgba(242,106,33,.13) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 5%  92%,  rgba(242,106,33,.07) 0%, transparent 65%);
+  background-attachment: fixed;
 }
+
 
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
@@ -174,10 +179,21 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 65% 10%, rgba(242,106,33,.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 5%  80%, rgba(11,31,58,.80)   0%, transparent 55%),
-    radial-gradient(ellipse 40% 40% at 90% 85%, rgba(242,106,33,.06) 0%, transparent 50%);
+    radial-gradient(ellipse 65% 55% at 75% 5%,  rgba(242,106,33,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 10% 85%, rgba(242,106,33,.06) 0%, transparent 55%);
   pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(242,106,33,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242,106,33,.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 40%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 40%, black 20%, transparent 100%);
 }
 
 .hero .container {
@@ -587,7 +603,7 @@ img { display: block; max-width: 100%; }
 /* ================================================
    SKILLS
    ================================================ */
-.skills { background: var(--bg-2); }
+.skills { background: var(--bg); }
 
 .skills .section-title { margin-bottom: 48px; }
 
@@ -1258,7 +1274,7 @@ img { display: block; max-width: 100%; }
 
 .contact-hero {
   position: relative;
-  background: var(--bg-2);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 48px 48px;
@@ -1445,7 +1461,7 @@ img { display: block; max-width: 100%; }
    FOOTER
    ================================================ */
 .footer {
-  background: var(--bg-2);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   padding: 24px 0;
 }
@@ -1688,4 +1704,77 @@ img { display: block; max-width: 100%; }
 .fade-up.visible {
   opacity: 1;
   transform: none;
+}
+
+/* 1. Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* 2. Typewriter cursor */
+.hero-subtitle::after {
+  content: '|';
+  color: var(--accent);
+  animation: blink .7s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* 3. Navbar progress bar */
+.nav-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--gradient);
+  transition: width .1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* 4. Custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(242,106,33,.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  margin-left: -18px;
+  margin-top: -18px;
+  transition: width .2s ease, height .2s ease, border-color .2s ease;
+  will-change: transform;
+}
+.custom-cursor.hovered {
+  width: 56px;
+  height: 56px;
+  margin-left: -28px;
+  margin-top: -28px;
+  border-color: rgba(242,106,33,.9);
+  background: rgba(242,106,33,.05);
+}
+.custom-cursor-dot {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  margin-left: -2.5px;
+  margin-top: -2.5px;
+  will-change: transform;
+}
+
+@media (hover: none) {
+  .custom-cursor, .custom-cursor-dot { display: none; }
 }

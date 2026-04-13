@@ -43,44 +43,115 @@ const activateLink = () => {
 window.addEventListener('scroll', activateLink);
 
 // ================================================
-// FADE-UP ANIMATION on scroll
+// 1. SCROLL REVEAL
 // ================================================
-const fadeTargets = document.querySelectorAll(
-  '.project-card, .skill-category, .roadmap-card, .badge, .timeline-item, .about-text p'
+const revealEls = document.querySelectorAll(
+  '.bento-card, .skill-category, .timeline-item, .about-badge, ' +
+  '.section-title, .pcard-future, .contact-card, .feat-stat'
 );
 
-fadeTargets.forEach(el => el.classList.add('fade-up'));
+revealEls.forEach((el, i) => {
+  el.classList.add('reveal');
+  el.style.transitionDelay = `${(i % 6) * 60}ms`;
+});
 
-const observer = new IntersectionObserver(
+const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.1 }
 );
 
-fadeTargets.forEach(el => observer.observe(el));
+revealEls.forEach(el => revealObserver.observe(el));
 
 // ================================================
-// STAGGER CHILDREN (grid items)
+// 2. TYPEWRITER en hero subtitle
 // ================================================
-const staggerGroups = [
-  '.skills-grid',
-  '.projects-grid',
-  '.roadmap-grid',
-  '.about-badges',
-];
+const typeEl = document.querySelector('.hero-subtitle');
+if (typeEl) {
+  const words = ['Data Analyst → Data Engineer', 'ETL · GCP · BigQuery · Airflow', 'Pipelines reales. Datos reales.'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
 
-staggerGroups.forEach(selector => {
-  const container = document.querySelector(selector);
-  if (!container) return;
-  [...container.children].forEach((child, i) => {
-    child.style.transitionDelay = `${i * 60}ms`;
-  });
+  function type() {
+    const current = words[wordIndex];
+    if (deleting) {
+      typeEl.textContent = current.substring(0, charIndex--);
+    } else {
+      typeEl.textContent = current.substring(0, charIndex++);
+    }
+
+    let delay = deleting ? 40 : 70;
+
+    if (!deleting && charIndex > current.length) {
+      delay = 2200;
+      deleting = true;
+    } else if (deleting && charIndex < 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      delay = 400;
+    }
+
+    setTimeout(type, delay);
+  }
+
+  typeEl.textContent = '';
+  setTimeout(type, 800);
+}
+
+// ================================================
+// 3. NAVBAR PROGRESS BAR
+// ================================================
+const progressBar = document.createElement('div');
+progressBar.className = 'nav-progress';
+document.getElementById('navbar').appendChild(progressBar);
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = `${pct}%`;
+});
+
+// ================================================
+// 4. CURSOR PERSONALIZADO
+// ================================================
+const cursor = document.createElement('div');
+cursor.className = 'custom-cursor';
+document.body.appendChild(cursor);
+
+const cursorDot = document.createElement('div');
+cursorDot.className = 'custom-cursor-dot';
+document.body.appendChild(cursorDot);
+
+let mouseX = 0, mouseY = 0;
+let cursorX = 0, cursorY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+});
+
+// cursor ring sigue con lag suave
+function animateCursor() {
+  cursorX += (mouseX - cursorX) * 0.12;
+  cursorY += (mouseY - cursorY) * 0.12;
+  cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// agrandar en hover sobre links y botones
+document.querySelectorAll('a, button, .bento-card, .kitty-img').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
 });
 
 // ================================================
