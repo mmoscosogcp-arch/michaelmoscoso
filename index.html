@@ -48,11 +48,22 @@
           <span class="hero-name">Michael Moscoso</span>
           <span class="hero-subtitle">Data Analyst <span class="arrow-gradient">→</span> Data Engineer</span>
         </h1>
-        <p class="hero-desc">
-          Ingeniero Civil Industrial con 4 años de experiencia trabajando con datos en empresas reales.
-          He construido ETL en Python, optimizado SQL en BigQuery y desarrollado dashboards en Power BI.
-          Hoy profundizo en ingeniería de datos moderna — proyecto a proyecto.
-        </p>
+        <div class="hero-metrics">
+          <div class="hero-metric">
+            <span class="hero-metric-num">4 años</span>
+            <span class="hero-metric-label">en datos reales</span>
+          </div>
+          <div class="hero-metric-divider"></div>
+          <div class="hero-metric">
+            <span class="hero-metric-num">3 empresas</span>
+            <span class="hero-metric-label">SMU · Chilexpress · The Andes Brands</span>
+          </div>
+          <div class="hero-metric-divider"></div>
+          <div class="hero-metric">
+            <span class="hero-metric-num">4 pipelines</span>
+            <span class="hero-metric-label">GCP · Airflow · BigQuery</span>
+          </div>
+        </div>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Ver proyectos</a>
           <a href="https://www.linkedin.com/in/michaelmoscosoramirez/" target="_blank" rel="noopener" class="btn btn-outline">
@@ -106,16 +117,13 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            Soy <strong>Ingeniero Civil Industrial</strong> con más de 4 años de experiencia trabajando con datos en empresas como
-            <strong>SMU S.A.</strong>, <strong>Chilexpress</strong> y <strong>The Andes Brands</strong>.
+            Soy <strong>Ingeniero Civil Industrial</strong> con 4 años transformando datos en decisiones reales.
+            En <strong>SMU S.A.</strong> automaticé reportes que antes tomaban 3 horas — hoy corren solos cada mañana.
+            En <strong>Chilexpress</strong> construí pipelines operacionales usados por el equipo comercial diariamente.
           </p>
           <p>
-            He construido <strong>ETL automatizados en Python</strong>, optimizado consultas SQL sobre <strong>BigQuery</strong>
-            y desarrollado <strong>dashboards en Power BI</strong> utilizados por equipos comerciales para la toma de decisiones.
-          </p>
-          <p>
-            Hoy profundizo en ingeniería de datos moderna — construyendo pipelines desde cero, aprendiendo arquitecturas
-            robustas y documentando ese proceso en este portafolio.
+            Hoy estudio <strong>Data Engineering en USACH</strong> y construyo proyectos reales en GCP para cerrar
+            la brecha entre análisis e ingeniería. Construyo los pipelines que alimentan los dashboards que yo mismo diseño.
           </p>
           <div class="diplomado-badge">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -282,7 +290,7 @@
             </a>
           </div>
           <h3 class="bento-title">Pipeline de Mercados Financieros</h3>
-          <p class="bento-desc">Extrae precios de AAPL, MSFT, GOOGL y TSLA desde Yahoo Finance. Calcula retornos diarios y promedios móviles. Almacena en DuckDB.</p>
+          <p class="bento-desc">¿Cómo analizar el comportamiento de acciones sin pagar por APIs caras? Construí un pipeline que extrae precios de AAPL, MSFT, GOOGL y TSLA, calcula retornos y promedios móviles, y los almacena en DuckDB como warehouse local.</p>
           <div class="pcard-stack">
             <span>Python</span><span>yfinance</span><span>DuckDB</span><span>Pandas</span>
           </div>
@@ -380,7 +388,7 @@
             </a>
           </div>
           <h3 class="bento-title">Pipeline Climático con Airflow</h3>
-          <p class="bento-desc">Extrae datos climáticos de ciudades chilenas desde Open-Meteo API, calcula amplitud térmica y carga en DuckDB. Orquestado con Airflow — ejecución diaria automática.</p>
+          <p class="bento-desc">El desafío: ejecutar un pipeline de datos sin intervención humana. Extraigo datos climáticos de ciudades chilenas, calculo amplitud térmica y los cargo en DuckDB — orquestado con Airflow para que corra solo cada día sin que yo toque nada.</p>
           <div class="pcard-stack">
             <span>Python</span><span>Apache Airflow</span><span>DuckDB</span><span>REST API</span>
           </div>
@@ -402,7 +410,7 @@
                 </a>
               </div>
               <h3 class="bento-title">Pipeline IPC Chile — GCP</h3>
-              <p class="bento-desc" style="max-width:480px;">Extrae 4 series del IPC desde la API del Banco Central de Chile. Carga los datos en Cloud Storage y BigQuery. Orquestado mensualmente con Apache Airflow.</p>
+              <p class="bento-desc" style="max-width:480px;">El Banco Central publica datos económicos críticos en una API sin estructura útil. Construí un pipeline que extrae 4 series del IPC mensualmente, las limpia y las carga en BigQuery listas para análisis — todo en la nube, todo automatizado con Airflow.</p>
               <div class="pcard-stack">
                 <span>Python</span><span>Apache Airflow</span><span>GCP</span><span>BigQuery</span><span>Cloud Storage</span>
               </div>

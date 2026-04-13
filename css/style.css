@@ -262,6 +262,41 @@ img { display: block; max-width: 100%; }
   padding: 0 4px;
 }
 
+.hero-metrics {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.hero-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.hero-metric-num {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  background: linear-gradient(135deg, #E6EDF3 60%, #F0A062);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-metric-label {
+  font-size: .72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.hero-metric-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
 .hero-desc {
   margin-top: 20px;
   color: var(--text-muted);
@@ -1644,7 +1679,7 @@ img { display: block; max-width: 100%; }
     gap: 40px;
     text-align: center;
   }
-  .hero-desc, .hero-tag, .hero-actions, .hero-stack {
+  .hero-desc, .hero-tag, .hero-actions, .hero-stack, .hero-metrics {
     justify-content: center;
   }
   .hero-visual { order: -1; }
