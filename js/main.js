@@ -130,3 +130,45 @@ if (footerYear) {
   const currentYear = new Date().getFullYear();
   footerYear.innerHTML = footerYear.innerHTML.replace('2026', currentYear);
 }
+
+// ================================================
+// EL KITTY MODAL
+// ================================================
+const kittyTrigger = document.getElementById('kitty-trigger');
+const kittyModal   = document.getElementById('kitty-modal');
+const kittyClose   = document.getElementById('kitty-close');
+
+const quotes = [
+  '"Miau." — El Kitty, filósofo.',
+  '"Zzzz..." — El Kitty, durmiendo la siesta.',
+  '"¿Me diste atún? No. Entonces no me hables." — El Kitty.',
+  '"El mundo gira para mí." — El Kitty, siempre.',
+  '"Fui, vi, dormí." — El Kitty, 2013–2026.',
+];
+
+function openKittyModal() {
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.querySelector('.kitty-modal-quote').textContent = quote;
+  kittyModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeKittyModal() {
+  kittyModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if (kittyTrigger) {
+  kittyTrigger.addEventListener('click', openKittyModal);
+}
+if (kittyClose) {
+  kittyClose.addEventListener('click', closeKittyModal);
+}
+if (kittyModal) {
+  kittyModal.addEventListener('click', (e) => {
+    if (e.target === kittyModal) closeKittyModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeKittyModal();
+  });
+}
