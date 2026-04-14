@@ -276,7 +276,7 @@
       <!-- BENTO GRID -->
       <div class="bento-grid">
 
-        <!-- 01 market-pipeline -->
+        <!-- 01 market-pipeline — col 1, row 1 -->
         <article class="bento-card" style="--bento-accent:#F59E0B">
           <div class="bento-top-bar"></div>
           <div class="bento-bg-num">01</div>
@@ -290,91 +290,13 @@
             </a>
           </div>
           <h3 class="bento-title">Pipeline de Mercados Financieros</h3>
-          <p class="bento-desc">¿Cómo analizar el comportamiento de acciones sin pagar por APIs caras? Construí un pipeline que extrae precios de AAPL, MSFT, GOOGL y TSLA, calcula retornos y promedios móviles, y los almacena en DuckDB como warehouse local.</p>
+          <p class="bento-desc">¿Cómo analizar el comportamiento de acciones sin pagar por APIs caras? Construí un pipeline que extrae precios de AAPL, MSFT, GOOGL y TSLA, calcula retornos y promedios móviles, y los almacena en DuckDB.</p>
           <div class="pcard-stack">
             <span>Python</span><span>yfinance</span><span>DuckDB</span><span>Pandas</span>
           </div>
         </article>
 
-        <!-- 04 data-jobs -->
-        <article class="bento-card" style="--bento-accent:#F26A21">
-          <div class="bento-top-bar"></div>
-          <div class="bento-bg-num">04</div>
-          <div class="bento-header">
-            <div class="bento-meta">
-              <span class="bento-icon">📊</span>
-              <span class="status status-done">Realizado</span>
-            </div>
-            <a href="https://github.com/mmoscosogcp-arch/data-jobs-analysis" target="_blank" rel="noopener" class="icon-link" title="Ver en GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            </a>
-          </div>
-          <h3 class="bento-title">Análisis del Mercado Laboral en Datos</h3>
-          <p class="bento-desc">+60.000 ofertas reales de trabajo en Data. La historia: <em>"¿Qué necesita saber un Data Engineer hoy?"</em> — skills demandadas, salarios por rol y tendencias del mercado.</p>
-          <div class="pcard-stack">
-            <span>Python</span><span>Pandas</span><span>DuckDB</span><span>Tableau</span><span>ETL</span>
-          </div>
-        </article>
-
-        <!-- 02 weather-pipeline -->
-        <article class="bento-card" style="--bento-accent:#38BDF8">
-          <div class="bento-top-bar"></div>
-          <div class="bento-bg-num">02</div>
-          <div class="bento-header">
-            <div class="bento-meta">
-              <span class="bento-icon">🌤️</span>
-              <span class="status status-done">Realizado</span>
-            </div>
-            <a href="https://github.com/mmoscosogcp-arch/weather-pipeline" target="_blank" rel="noopener" class="icon-link" title="Ver en GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            </a>
-          </div>
-          <h3 class="bento-title">Pipeline Climático con Airflow</h3>
-          <p class="bento-desc">El desafío: ejecutar un pipeline de datos sin intervención humana. Extraigo datos climáticos de ciudades chilenas, calculo amplitud térmica y los cargo en DuckDB — orquestado con Airflow para que corra solo cada día sin que yo toque nada.</p>
-          <div class="pcard-stack">
-            <span>Python</span><span>Apache Airflow</span><span>DuckDB</span><span>REST API</span>
-          </div>
-        </article>
-
-        <!-- 03 precios-chile: full width -->
-        <article class="bento-card bento-wide" style="--bento-accent:#34D399">
-          <div class="bento-top-bar"></div>
-          <div class="bento-bg-num" style="right:2rem; font-size:7rem;">03</div>
-          <div class="bento-wide-inner">
-            <div>
-              <div class="bento-header">
-                <div class="bento-meta">
-                  <span class="bento-icon">🇨🇱</span>
-                  <span class="status status-done">Realizado</span>
-                </div>
-                <a href="https://github.com/mmoscosogcp-arch/precios-ipc-chile" target="_blank" rel="noopener" class="icon-link" title="Ver en GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-              </div>
-              <h3 class="bento-title">Pipeline IPC Chile — GCP</h3>
-              <p class="bento-desc" style="max-width:480px;">El Banco Central publica datos económicos críticos en una API sin estructura útil. Construí un pipeline que extrae 4 series del IPC mensualmente, las limpia y las carga en BigQuery listas para análisis — todo en la nube, todo automatizado con Airflow.</p>
-              <div class="pcard-stack">
-                <span>Python</span><span>Apache Airflow</span><span>GCP</span><span>BigQuery</span><span>Cloud Storage</span>
-              </div>
-            </div>
-            <div class="bento-wide-stats">
-              <div class="bento-stat">
-                <span class="bento-stat-num">4</span>
-                <span class="bento-stat-label">Series IPC</span>
-              </div>
-              <div class="bento-stat">
-                <span class="bento-stat-num">6 años</span>
-                <span class="bento-stat-label">de datos</span>
-              </div>
-              <div class="bento-stat">
-                <span class="bento-stat-num">2 clouds</span>
-                <span class="bento-stat-label">GCS + BigQuery</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 05 ecommerce: hero 2 cols × 2 rows -->
+        <!-- 05 ecommerce — hero cols 2-3, rows 1-2 -->
         <article class="bento-card bento-hero" style="--bento-accent:#A78BFA">
           <div class="bento-top-bar"></div>
           <div class="bento-bg-num">05</div>
@@ -390,7 +312,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
           </div>
-          <h3 class="bento-title" style="font-size:1.25rem;">E-commerce Analytics — Star Schema en GCP</h3>
+          <h3 class="bento-title" style="font-size:1.2rem;">E-commerce Analytics — Star Schema en GCP</h3>
           <p class="bento-desc">100.000 órdenes reales de e-commerce brasileño. El desafío: transformar 9 fuentes de datos en un star schema en BigQuery y contar la historia del negocio en Tableau — revenue, satisfacción, geografía y productos.</p>
           <div class="pcard-stack">
             <span>Python</span><span>BigQuery</span><span>Star Schema</span><span>Tableau</span><span>GCP</span><span>Airflow</span>
@@ -402,7 +324,7 @@
             </div>
             <div class="bento-stat">
               <span class="bento-stat-num">9</span>
-              <span class="bento-stat-label">fuentes de datos</span>
+              <span class="bento-stat-label">fuentes</span>
             </div>
             <div class="bento-stat">
               <span class="bento-stat-num">5</span>
@@ -425,6 +347,102 @@
             <div class="feat-step">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg>
               Tableau
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 weather-pipeline — col 1, row 2 -->
+        <article class="bento-card" style="--bento-accent:#38BDF8">
+          <div class="bento-top-bar"></div>
+          <div class="bento-bg-num">02</div>
+          <div class="bento-header">
+            <div class="bento-meta">
+              <span class="bento-icon">🌤️</span>
+              <span class="status status-done">Realizado</span>
+            </div>
+            <a href="https://github.com/mmoscosogcp-arch/weather-pipeline" target="_blank" rel="noopener" class="icon-link" title="Ver en GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="bento-title">Pipeline Climático con Airflow</h3>
+          <p class="bento-desc">El desafío: ejecutar un pipeline sin intervención humana. Extraigo datos climáticos de ciudades chilenas, calculo amplitud térmica y los cargo en DuckDB — Airflow lo corre solo cada día.</p>
+          <div class="pcard-stack">
+            <span>Python</span><span>Apache Airflow</span><span>DuckDB</span><span>REST API</span>
+          </div>
+        </article>
+
+        <!-- 03 precios-chile — ancho completo -->
+        <article class="bento-card bento-wide" style="--bento-accent:#34D399">
+          <div class="bento-top-bar"></div>
+          <div class="bento-bg-num" style="right:2rem; font-size:7rem;">03</div>
+          <div class="bento-wide-inner">
+            <div>
+              <div class="bento-header">
+                <div class="bento-meta">
+                  <span class="bento-icon">🇨🇱</span>
+                  <span class="status status-done">Realizado</span>
+                </div>
+                <a href="https://github.com/mmoscosogcp-arch/precios-ipc-chile" target="_blank" rel="noopener" class="icon-link" title="Ver en GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+              <h3 class="bento-title">Pipeline IPC Chile — GCP</h3>
+              <p class="bento-desc" style="max-width:480px;">El Banco Central publica datos económicos críticos en una API sin estructura útil. Construí un pipeline que extrae 4 series del IPC mensualmente, las limpia y las carga en BigQuery — todo automatizado con Airflow.</p>
+              <div class="pcard-stack">
+                <span>Python</span><span>Apache Airflow</span><span>GCP</span><span>BigQuery</span><span>Cloud Storage</span>
+              </div>
+            </div>
+            <div class="bento-wide-stats">
+              <div class="bento-stat">
+                <span class="bento-stat-num">4</span>
+                <span class="bento-stat-label">Series IPC</span>
+              </div>
+              <div class="bento-stat">
+                <span class="bento-stat-num">6 años</span>
+                <span class="bento-stat-label">de datos</span>
+              </div>
+              <div class="bento-stat">
+                <span class="bento-stat-num">2 clouds</span>
+                <span class="bento-stat-label">GCS + BigQuery</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 data-jobs — ancho completo -->
+        <article class="bento-card bento-wide" style="--bento-accent:#F26A21">
+          <div class="bento-top-bar"></div>
+          <div class="bento-bg-num" style="right:2rem; font-size:7rem;">04</div>
+          <div class="bento-wide-inner">
+            <div>
+              <div class="bento-header">
+                <div class="bento-meta">
+                  <span class="bento-icon">📊</span>
+                  <span class="status status-done">Realizado</span>
+                </div>
+                <a href="https://github.com/mmoscosogcp-arch/data-jobs-analysis" target="_blank" rel="noopener" class="icon-link" title="Ver en GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+              <h3 class="bento-title">Análisis del Mercado Laboral en Datos</h3>
+              <p class="bento-desc" style="max-width:480px;">+60.000 ofertas reales de trabajo en Data. La historia: <em>"¿Qué necesita saber un Data Engineer hoy?"</em> — skills demandadas, salarios por rol y tendencias del mercado laboral tech.</p>
+              <div class="pcard-stack">
+                <span>Python</span><span>Pandas</span><span>DuckDB</span><span>Tableau</span><span>ETL</span>
+              </div>
+            </div>
+            <div class="bento-wide-stats">
+              <div class="bento-stat">
+                <span class="bento-stat-num">61.953</span>
+                <span class="bento-stat-label">ofertas analizadas</span>
+              </div>
+              <div class="bento-stat">
+                <span class="bento-stat-num">4</span>
+                <span class="bento-stat-label">roles comparados</span>
+              </div>
+              <div class="bento-stat">
+                <span class="bento-stat-num">6.146</span>
+                <span class="bento-stat-label">registros limpios</span>
+              </div>
             </div>
           </div>
         </article>
