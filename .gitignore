@@ -1,3 +1,14 @@
-projects/data-jobs-analysis/
-projects/weather-pipeline/
-projects/precios-chile/
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code
+.claude/
+.agents/
+skills-lock.json
+
+# Preview local
+preview.html
+
+# Proyectos individuales (cada uno tiene su propio repo en GitHub)
+projects/
