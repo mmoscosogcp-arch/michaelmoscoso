@@ -294,9 +294,19 @@
             </a>
           </div>
           <h3 class="bento-title">Pipeline de Mercados Financieros</h3>
-          <p class="bento-desc">¿Cómo analizar el comportamiento de acciones sin pagar por APIs caras? Construí un pipeline que extrae precios de AAPL, MSFT, GOOGL y TSLA, calcula retornos y promedios móviles, y los almacena en DuckDB.</p>
+          <p class="bento-desc">¿Cómo analizar acciones sin pagar por APIs caras? Extraigo precios históricos de <strong style="color:var(--text)">AAPL, MSFT, GOOGL y TSLA</strong>, calculo retornos diarios y promedios móviles (MA7, MA30), y los persisto en DuckDB — todo con Python puro, sin infraestructura cloud.</p>
           <div class="pcard-stack">
             <span>Python</span><span>yfinance</span><span>DuckDB</span><span>Pandas</span>
+          </div>
+          <div class="bento-stats">
+            <div class="bento-stat">
+              <span class="bento-stat-num">4</span>
+              <span class="bento-stat-label">acciones analizadas</span>
+            </div>
+            <div class="bento-stat">
+              <span class="bento-stat-num">MA7/30</span>
+              <span class="bento-stat-label">promedios móviles</span>
+            </div>
           </div>
         </article>
 
@@ -368,9 +378,19 @@
             </a>
           </div>
           <h3 class="bento-title">Pipeline Climático con Airflow</h3>
-          <p class="bento-desc">El desafío: ejecutar un pipeline sin intervención humana. Extraigo datos climáticos de ciudades chilenas, calculo amplitud térmica y los cargo en DuckDB — Airflow lo corre solo cada día.</p>
+          <p class="bento-desc">El desafío: un pipeline que corre <strong style="color:var(--text)">sin intervención humana</strong>. Consume la API de Open-Meteo, extrae temperatura, humedad y viento de ciudades chilenas, calcula amplitud térmica diaria y lo persiste en DuckDB — Airflow lo orquesta y reintenta en caso de fallo.</p>
           <div class="pcard-stack">
             <span>Python</span><span>Apache Airflow</span><span>DuckDB</span><span>REST API</span>
+          </div>
+          <div class="bento-stats">
+            <div class="bento-stat">
+              <span class="bento-stat-num">Daily</span>
+              <span class="bento-stat-label">ejecución automática</span>
+            </div>
+            <div class="bento-stat">
+              <span class="bento-stat-num">DAG</span>
+              <span class="bento-stat-label">orquestación Airflow</span>
+            </div>
           </div>
         </article>
 
@@ -391,7 +411,7 @@
                 </a>
               </div>
               <h3 class="bento-title">Pipeline IPC Chile — GCP</h3>
-              <p class="bento-desc" style="max-width:480px;">El Banco Central publica datos económicos críticos en una API sin estructura útil. Construí un pipeline que extrae 4 series del IPC mensualmente, las limpia y las carga en BigQuery — todo automatizado con Airflow.</p>
+              <p class="bento-desc" style="max-width:480px;">El Banco Central publica datos económicos críticos en una API sin estructura útil. Construí un pipeline que extrae <strong style="color:var(--text)">4 series del IPC con 6 años de historia</strong>, las transforma, las sube a Cloud Storage como raw layer y las carga en BigQuery como capa analítica — Airflow lo programa mensualmente de forma automática.</p>
               <div class="pcard-stack">
                 <span>Python</span><span>Apache Airflow</span><span>GCP</span><span>BigQuery</span><span>Cloud Storage</span>
               </div>
@@ -470,7 +490,7 @@
             </a>
           </div>
           <h3 class="bento-title" style="font-size:1.2rem;">Pipeline de Datos Musical — SQL + NoSQL + Orquestación</h3>
-          <p class="bento-desc">Pipeline completo sobre 88K canciones reales de Spotify: modelo relacional en PostgreSQL, historial de reproducciones en MongoDB, transformaciones con dbt y orquestación con Airflow — arquitectura híbrida SQL/NoSQL como en producción.</p>
+          <p class="bento-desc">88K canciones reales de Spotify, dos motores de base de datos, un pipeline completo. <strong style="color:var(--text)">PostgreSQL</strong> para el catálogo relacional (artistas, álbumes, géneros) y <strong style="color:var(--text)">MongoDB</strong> para el historial de reproducciones — la misma arquitectura que usan Spotify y Apple Music en producción. Transformaciones con dbt y orquestación con Airflow.</p>
           <div class="pcard-stack">
             <span>PostgreSQL</span><span>MongoDB</span><span>Docker</span><span>Python</span><span>dbt</span><span>Airflow</span>
           </div>
